@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="@Href("~/Content/Stylesheets/style.css")">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <!-- Header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Albums")">Playlista</a>
+            </div>
+
+            <!-- Links (items) on LEFT -->
+            <div class="collapse navbar-collapse" id="topNavbar">
+
+                <ul class="nav navbar-nav">
+                    <li class="">
+                        <a href="@Url.Action("Index", "Albums")">
+                            <span class="glyphicon glyphicon-cd" aria-hidden="true"> Albums</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Index", "Songs")">
+                            <span class="glyphicon glyphicon-music" aria-hidden="true"> Songs</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Links (items) on RIGHT -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="@Url.Action("Create", "Albums")">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"> Add Album</span>
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="@Url.Action("Create", "Songs")">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"> Add Song</span>
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="@Url.Action("Create", "Genres")">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"> Add Genre</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    @RenderBody()
+
+</body>
+
+</html>

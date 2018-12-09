@@ -1,0 +1,24 @@
+﻿body {
+    background-color: #fafafa;
+    height: 2000px;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-family: "Brush Script MT";
+}
+
+.navbar-nav li a:hover {
+    background-color: dodgerblue !important;
+}
+
+
+/* For image thumbnails in index. */
+.col-md-4 {
+    display: flex;
+    justify-content: space-around;
+}

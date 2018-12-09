@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Albums.Models.Album>
+
+@{
+    Layout = "~/Views/_header.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <h1>Albums</h1>
+        @foreach (var item in Model) {
+
+            <div class="col-md-3 col-sm-6">
+
+                <div class="thumbnail">
+
+                    <img src="@Html.DisplayFor(modelItem => item.AlbumLogo)" class="img-responsive">
+
+                    <div class="caption">
+                        <span class="label label-default">@Html.DisplayFor(modelItem => item.Genre.GenreName)</span>
+                        <h2>@Html.DisplayFor(modelItem => item.AlbumTitle)</h2>
+                        <h4>@Html.DisplayFor(modelItem => item.AlbumArtistName)</h4>
+
+                        <!-- Details -->
+                        @Html.ActionLink("Details", "Details", new { id = item.AlbumId }, new { @class = "btn btn-md btn-primary" })
+
+                        <!-- EDIT/UPDATE -->
+                        @Html.ActionLink("Edit", "Edit", new { id = item.AlbumId }, new { @class = "btn btn-default btn-md" })
+
+                        <!-- DELETE -->
+                        @Html.ActionLink("Delete", "Delete", new { id = item.AlbumId }, new { @class = "btn btn-danger btn-md" })
+
+                    </div>
+                </div>
+
+            </div>
+
+        }
+
+    </div> <!-- /row -->
+
+</div> <!-- /container -->
